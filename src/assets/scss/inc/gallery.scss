@@ -1,0 +1,297 @@
+.gallery {
+  margin-top: 80px;
+  padding-top: 84px;
+  padding-bottom: 120px;
+  background-color: $blue;
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: $white;
+    width: 100%;
+  }
+
+  &::before {
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    background-color: $white;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+
+  &::after {
+    top: 0;
+    left: 0;
+    background-color: $white;
+    height: 40px;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 25px;
+    padding-bottom: 30px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: $fw-medium;
+    padding-left: 5%;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &-inner {
+      max-width: 90%;
+
+      .swiper-slide {
+        width: 290px;
+        height: 220px;
+        cursor: pointer;
+
+        @media (max-width:730px) {
+          height: 186px;
+        }
+
+        @media (max-width:620px) {
+          height: 160px;
+        }
+
+        @media (max-width:542px) {
+          height: 140px;
+        }
+
+        @media (max-width:413px) {
+          height: 240px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 16px;
+      height: 34px;
+      color: $orange ;
+
+      @media (max-width:620px) {
+        top: 124%;
+      }
+
+      @media (max-width:413px) {
+        top: 114%;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0%;
+
+      @media (max-width:1024px) {
+        right: 4px;
+      }
+
+      @media (max-width:620px) {
+        right: 43%;
+      }
+
+      @media (max-width:414px) {
+        right: 40%;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0%;
+
+      @media (max-width:1024px) {
+        left: 4px;
+      }
+
+      @media (max-width:620px) {
+        left: 43%;
+      }
+
+      @media (max-width:414px) {
+        left: 40%;
+      }
+    }
+  }
+
+}
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($black, 0.8);
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .next-slide,
+  .prev-slide {
+    position: absolute;
+    top: 38%;
+    width: 30px;
+    height: 60px;
+
+    @media (max-width:1120px) {
+      width: 24px;
+      height: 32px;
+    }
+
+    @media (max-width:1120px) {
+      top: 30%;
+    }
+
+    @media (max-width:520px) {
+      width: 16px;
+      height: 22px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .next-slide {
+    right: 5px;
+
+    @media (max-width:1120px) {
+      right: -2px;
+    }
+
+    @media (max-width:520px) {
+      right: 2px;
+    }
+
+    @media (max-width:380px) {
+      right: -1px;
+    }
+  }
+
+  .prev-slide {
+    transform: rotate(180deg);
+    left: 5px;
+
+    @media (max-width:1120px) {
+      left: -2px;
+    }
+
+    @media (max-width:520px) {
+      left: 2px;
+    }
+
+    @media (max-width:380px) {
+      left: -1px;
+    }
+  }
+
+  &.active {
+    display: flex;
+  }
+
+  &__wrapper {
+    max-width: 800px;
+    display: inline-block;
+    background-color: $white;
+    position: relative;
+    z-index: 99999;
+    padding: 40px 0px;
+    height: auto;
+
+    @media (max-width:1120px) {
+      max-width: 600px;
+    }
+
+    @media (max-width:820px) {
+      max-width: 400px;
+      padding: 20px 0px;
+    }
+
+    @media (max-width:520px) {
+      max-width: 340px;
+    }
+
+    @media (max-width:380px) {
+      max-width: 280px;
+    }
+
+    span {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+
+      @media (max-width:1120px) {
+        font-size: 20px;
+      }
+
+      @media (max-width:820px) {
+        right: 5px;
+        top: 0px;
+        font-size: 16px;
+      }
+    }
+
+    &-sliders {
+      max-width: 90%;
+      margin: 0 auto;
+
+      .mySwiper2 {
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .mySwiper {
+        margin-top: 24px;
+
+        @media (max-width:820px) {
+          margin-top: 14px;
+        }
+
+        .swiper-slide {
+          width: 180px;
+          height: 180px;
+          border: 4px solid $white;
+          transition: 0.5s;
+          box-sizing: border-box;
+
+          @media (max-width:1120px) {
+            width: 120px;
+            height: 120px;
+          }
+
+          @media (max-width:380px) {
+            height: 100px;
+          }
+
+          &.swiper-slide-thumb-active {
+            border: 4px solid $orange;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,149 @@
+.footer {
+  background-color: $blue;
+  position: relative;
+  z-index: 9999;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    height: 80px;
+  }
+
+  &__cop {
+    color: darken($white, 60);
+    font-size: 12px;
+  }
+
+  &__logo {
+    a {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+
+      span {
+        font-size: 48px;
+        color: $orange;
+        font-weight: $fw-semiBold;
+        padding-right: 20px;
+
+        @media (max-width:560px) {
+          font-size: 42px;
+          padding-right: 10px;
+        }
+
+        @media (max-width:360px) {
+          font-size: 30px;
+          padding-right: 5px;
+        }
+      }
+
+      p {
+        width: 94px;
+        font-size: 20px;
+        border-left: 1px solid $white;
+        padding-left: 11px;
+        font-weight: $fw-medium;
+        line-height: 22px;
+
+        @media (max-width:560px) {
+          font-size: 18px;
+          line-height: 18px;
+          padding-left: 10px;
+        }
+
+        @media (max-width:360px) {
+          font-size: 16px;
+          line-height: 16px;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    @media (max-width:1024px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: right;
+      gap: 0 20px;
+    }
+
+    @media (max-width:730px) {
+      gap: 0 10px;
+      width: 320px;
+    }
+
+    @media (max-width:560px) {
+      grid-template-columns: repeat(12, 1fr);
+      justify-items: end;
+      max-width: 144px;
+    }
+
+    a {
+      font-size: 14px;
+      margin-right: 32px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      @media (max-width:1024px) {
+        margin-right: 0;
+      }
+
+      @media (max-width:560px) {
+        font-size: 18px;
+
+
+        &.icon {
+
+          order: 2;
+          font-size: 0;
+
+          svg {
+            margin-right: 0;
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        grid-column: span 4;
+
+        &:last-child {
+          grid-column: span 12;
+          margin-bottom: 0px;
+          order: 1;
+        }
+      }
+
+      @media (max-width:360px) {
+        font-size: 16px;
+
+        &.icon {
+          font-size: 0;
+        }
+      }
+
+
+      svg {
+        width: 22px;
+        height: 22px;
+        margin-right: 4px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+        margin-left: 51px;
+
+        @media (max-width:1280px) {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+
+}

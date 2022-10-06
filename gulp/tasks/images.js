@@ -2,6 +2,7 @@ import imagemin from "gulp-imagemin";
 import webp from "gulp-webp"
 
 export const images = () => {
+	console.log(app.gulp.src(app.path.src.images));
 	return app.gulp.src(app.path.src.images)
 		.pipe(app.plugins.plumber())
 		.pipe(app.plugins.newer(app.path.build.images))

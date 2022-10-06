@@ -18,6 +18,10 @@ body {
   font-family: 'Montserrat';
   font-weight: $fw-regular;
   line-height: 25px;
+
+  &.block {
+    overflow-y: hidden;
+  }
 }
 
 main {
@@ -34,10 +38,6 @@ footer {
 
   @media (max-width:1280px) {
     max-width: 900px;
-  }
-
-  @media (max-width:1024px) {
-    max-width: 700px;
   }
 
   @media (max-width:1024px) {
