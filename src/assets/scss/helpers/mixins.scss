@@ -1,0 +1,61 @@
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src:
+      url(#{$path}.woff2) format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+// @include font-face('Roboto','path' ,$fw-regular ,'normal' );
+
+
+// @mixin fz($fzmax,$fzmin){
+//   font-size: calc(#{$fzmin}px + (#{$fzmax} - #{$fzmin}) * ((100vw - 320px) / (#{$maxWidth} - 320)));
+// }
+
+// @include fz(32,20);
+
+
+
+
+
+@function withMeasure($value, $measure) {
+  @return unquote('#{$value}#{$measure}');
+}
+@function withPx($value) {
+  @return withMeasure($value, 'px');
+}
+@function adaptiveValue($min, $max) {
+  $valueDiff: $max - $min;
+  $containerDiff: $maxWidth - $minWidth;
+
+  @return calc(
+    #{withPx($min)} + #{$valueDiff} *
+      ((100vw - #{withPx($minWidth)}) / #{$containerDiff})
+  );
+}
+
+
+
+
+@mixin adaptiveProp($prop, $min, $max, $mediaType: '') {
+  $result: adaptiveValue($min, $max);
+
+  @if ($mediaType == 'min' or $mediaType == 'max') {
+    #{$prop}: withPx($max);
+
+    @media (#{$mediaType}-width: withPx($maxWidth)) {
+      #{$prop}: $result;
+    }
+  } @else {
+    #{$prop}: $result;
+  }
+}
+
+// @include adaptiveProp("font-size",16,26,'max');
+//   @media (min-width:1920px) {
+//     @include adaptiveProp("font-size",16,26,'min');
+//   }

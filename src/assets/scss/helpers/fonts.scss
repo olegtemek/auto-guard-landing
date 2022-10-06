@@ -1,0 +1,6 @@
+// @include font-face('Raleway', '../fonts/Raleway-Light', 300, 'normal');
+
+@include font-face('Montserrat', '../fonts/Montserrat-Regular', $fw-regular, 'normal');
+@include font-face('Montserrat', '../fonts/Montserrat-Medium', $fw-medium, 'normal');
+@include font-face('Montserrat', '../fonts/Montserrat-SemiBold', $fw-semiBold, 'normal');
+@include font-face('Montserrat', '../fonts/Montserrat-Bold', $fw-bold, 'normal');
