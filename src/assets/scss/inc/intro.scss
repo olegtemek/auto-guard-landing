@@ -6,11 +6,21 @@
   margin-top: -20px;
 
   @media (max-width:1500px) {
-    background-size: 184%;
-    background-position-x: -60vw;
+    background-size: 144%;
+    background-position-x: -40vw;
   }
 
-  @media (max-width:1024px) {
+  @media (max-width:1400px) {
+    background-size: 144%;
+    background-position-x: -40vw;
+  }
+
+  @media (max-width:1280px) {
+    background-size: 174%;
+    background-position-x: -50vw;
+  }
+
+  @media (max-width:1112px) {
     background-size: 200%;
     background-position-x: -70vw;
   }

@@ -1,9 +1,10 @@
 .map {
-  padding-top: 130px;
+  margin-top: 130px;
   height: 400px;
 
   @media (max-width:960px) {
     height: 300px;
+    margin-top: 60px;
   }
 
   img {

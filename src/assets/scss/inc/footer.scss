@@ -90,6 +90,11 @@
       text-transform: uppercase;
       display: flex;
       align-items: center;
+      transition: 0.5s;
+
+      &:hover {
+        color: $orange;
+      }
 
       @media (max-width:1024px) {
         margin-right: 0;
