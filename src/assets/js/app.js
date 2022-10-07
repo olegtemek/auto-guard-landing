@@ -1,3 +1,5 @@
+
+
 let buttons = document.getElementsByClassName("accordion");
 
 for (let i = 0; i < buttons.length; i++) {
@@ -157,3 +159,23 @@ slides.forEach(slide => {
 
 
 // end slider
+
+
+
+
+//map
+
+
+let map = document.getElementById('map')
+let count = 0;
+map.addEventListener('mouseout', (e) => {
+  if (count == 0) {
+    map.innerHTML = `<iframe
+  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab89bd5971f742d068a6c1a81a2673ae6961fd40779f414abcacdb3c402363e64&amp;source=constructor"
+  width="100%" height="100%"></iframe>`
+    count++;
+  } else {
+
+  }
+
+})
