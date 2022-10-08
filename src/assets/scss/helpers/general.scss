@@ -91,3 +91,31 @@ footer {
     font-size: 20px;
   }
 }
+
+
+
+.link {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  animation: anim 0.5s infinite alternate-reverse;
+
+  img {
+    width: 80px;
+    object-fit: cover;
+    height: 60px;
+  }
+
+}
+
+
+@keyframes anim {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
